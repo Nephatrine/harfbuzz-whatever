@@ -1,5 +1,5 @@
 /*
- * Copyright © 2011  Google, Inc.
+ * Copyright © 2009  Red Hat, Inc.
  *
  *  This is part of HarfBuzz, a text shaping library.
  *
@@ -21,46 +21,32 @@
  * ON AN "AS IS" BASIS, AND THE COPYRIGHT HOLDER HAS NO OBLIGATION TO
  * PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
  *
- * Google Author(s): Behdad Esfahbod
+ * Red Hat Author(s): Behdad Esfahbod
  */
 
-#ifndef HB_H_IN
-#error "Include <hb.h> instead."
+#ifndef HB_H
+#define HB_H
+#define HB_H_IN
+
+#include "hb-version.h"
+
+#ifndef HB_EXTERN
+#define HB_EXTERN extern
 #endif
 
-#ifndef HB_VERSION_H
-#define HB_VERSION_H
-
+#include "hb-blob.h"
+#include "hb-buffer.h"
 #include "hb-common.h"
+#include "hb-deprecated.h"
+#include "hb-face.h"
+#include "hb-font.h"
+#include "hb-set.h"
+#include "hb-shape.h"
+#include "hb-shape-plan.h"
+#include "hb-unicode.h"
 
 HB_BEGIN_DECLS
-
-
-#define HB_VERSION_MAJOR @HB_VERSION_MAJOR@
-#define HB_VERSION_MINOR @HB_VERSION_MINOR@
-#define HB_VERSION_MICRO @HB_VERSION_MICRO@
-
-#define HB_VERSION_STRING "@HB_VERSION@"
-
-#define HB_VERSION_ATLEAST(major,minor,micro) \
-	((major)*10000+(minor)*100+(micro) <= \
-	 HB_VERSION_MAJOR*10000+HB_VERSION_MINOR*100+HB_VERSION_MICRO)
-
-
-HB_EXTERN void
-hb_version (unsigned int *major,
-	    unsigned int *minor,
-	    unsigned int *micro);
-
-HB_EXTERN const char *
-hb_version_string (void);
-
-HB_EXTERN hb_bool_t
-hb_version_atleast (unsigned int major,
-		    unsigned int minor,
-		    unsigned int micro);
-
-
 HB_END_DECLS
 
-#endif /* HB_VERSION_H */
+#undef HB_H_IN
+#endif /* HB_H */

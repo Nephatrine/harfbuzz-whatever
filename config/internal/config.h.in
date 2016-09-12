@@ -1,0 +1,74 @@
+/* Define to 1 if you have the `atexit' function. */
+#cmakedefine HAVE_ATEXIT
+
+/* Have Core Text backend */
+#cmakedefine HAVE_CORETEXT
+
+/* Have DirectWrite library */
+#cmakedefine HAVE_DIRECTWRITE
+
+/* Have simple TrueType Layout backend */
+#define HAVE_FALLBACK 1
+
+/* Have GCC __atomic_* atomic primitives */
+#cmakedefine HAVE_GCC_ATOMIC_PRIMITIVES
+
+/* Define to 1 if you have the `getpagesize' function. */
+#cmakedefine HAVE_GETPAGESIZE
+
+/* Have glib2 library */
+#cmakedefine HAVE_GLIB
+
+/* Have Graphite2 library */
+#cmakedefine HAVE_GRAPHITE2
+
+/* Have ICU library */
+#cmakedefine HAVE_ICU
+
+/* Use hb-icu Unicode callbacks */
+#undef HAVE_ICU_BUILTIN
+
+/* Have Intel __sync_* atomic primitives */
+#cmakedefine HAVE_INTEL_ATOMIC_PRIMITIVES
+
+/* Define to 1 if you have the `mprotect' function. */
+#cmakedefine HAVE_MPROTECT
+
+/* Do not have Unicode library (ICU, UCDN, GLib, etc.) */
+#cmakedefine HB_NO_UNICODE_FUNCS
+
+/* Have native OpenType Layout backend */
+#define HAVE_OT 1
+
+/* Have POSIX threads */
+#cmakedefine HAVE_PTHREAD
+
+/* Define to 1 if you have the <sched.h> header file. */
+#cmakedefine HAVE_SCHED_H
+
+/* Have sched_yield */
+#cmakedefine HAVE_SCHED_YIELD
+
+/* Have Solaris __machine_*_barrier and atomic_* operations */
+#undef HAVE_SOLARIS_ATOMIC_OPS
+
+/* Define to 1 if you have the `sysconf' function. */
+#cmakedefine HAVE_SYSCONF
+
+/* Define to 1 if you have the <sys/mman.h> header file. */
+#cmakedefine HAVE_SYS_MMAN_H
+
+/* Have UCDN Unicode functions */
+#cmakedefine HAVE_UCDN
+
+/* Have Uniscribe library */
+#cmakedefine HAVE_UNISCRIBE
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#cmakedefine HAVE_UNISTD_H
+
+/* Compile without a unicode library... */
+#if !defined(HAVE_GLIB) && !defined(HAVE_ICU) && !defined(HAVE_UCDN)
+#define HB_NO_UNICODE_FUNCS 1
+#endif
+

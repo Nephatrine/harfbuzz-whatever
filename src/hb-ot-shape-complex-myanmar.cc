@@ -124,7 +124,7 @@ enum syllable_type_t {
   non_myanmar_cluster,
 };
 
-#include "hb-ot-shape-complex-myanmar-machine.hh"
+#include "internal/hb-ot-shape-complex-myanmar-machine.hh"
 
 
 /* Note: This enum is duplicated in the -machine.rl source file.

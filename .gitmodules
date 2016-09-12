@@ -1,0 +1,3 @@
+[submodule "config/CMake"]
+	path = config/CMake
+	url = git@github.com:Nephatrine/cmake-modules-whatever.git

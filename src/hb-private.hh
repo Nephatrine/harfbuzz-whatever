@@ -29,9 +29,7 @@
 #ifndef HB_PRIVATE_HH
 #define HB_PRIVATE_HH
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+#include "internal/config.h"
 
 #include "hb.h"
 #define HB_H_IN
@@ -186,7 +184,7 @@ static int errno = 0; /* Use something better? */
 #  endif
 #endif
 
-#if HAVE_ATEXIT
+#ifdef HAVE_ATEXIT
 /* atexit() is only safe to be called from shared libraries on certain
  * platforms.  Whitelist.
  * https://bugs.freedesktop.org/show_bug.cgi?id=82246 */

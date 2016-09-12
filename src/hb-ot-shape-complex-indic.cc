@@ -589,7 +589,7 @@ enum syllable_type_t {
   non_indic_cluster,
 };
 
-#include "hb-ot-shape-complex-indic-machine.hh"
+#include "internal/hb-ot-shape-complex-indic-machine.hh"
 
 
 static void

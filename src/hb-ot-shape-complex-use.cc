@@ -238,7 +238,7 @@ enum syllable_type_t {
   non_cluster,
 };
 
-#include "hb-ot-shape-complex-use-machine.hh"
+#include "internal/hb-ot-shape-complex-use-machine.hh"
 
 
 static void

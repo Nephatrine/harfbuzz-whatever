@@ -386,8 +386,8 @@ parse_int (const char *pp, const char *end, int32_t *pv)
   return true;
 }
 
-#include "hb-buffer-deserialize-json.hh"
-#include "hb-buffer-deserialize-text.hh"
+#include "internal/hb-buffer-deserialize-json.hh"
+#include "internal/hb-buffer-deserialize-text.hh"
 
 /**
  * hb_buffer_deserialize_glyphs:
