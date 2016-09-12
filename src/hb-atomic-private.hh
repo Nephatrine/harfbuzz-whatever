@@ -34,7 +34,6 @@
 
 #include "hb-private.hh"
 
-
 /* atomic_int */
 
 /* We need external help for these */
@@ -45,6 +44,14 @@
 
 /* Defined externally, i.e. in config.h; must have typedef'ed hb_atomic_int_impl_t as well. */
 
+
+#elif !defined(HB_NO_MT) && defined(HAVE_GCC_ATOMIC_PRIMITIVES)
+
+typedef int hb_atomic_int_impl_t;
+#define HB_ATOMIC_INT_IMPL_INIT( V )          ( V )
+#define hb_atomic_int_impl_add( AI, V )       __atomic_fetch_add( &( AI ), ( V ), __ATOMIC_SEQ_CST )
+#define hb_atomic_ptr_impl_get( P )           ( void * )__atomic_load_n( ( P ), __ATOMIC_SEQ_CST ) 
+#define hb_atomic_ptr_impl_cmpexch( P, O, N ) __atomic_compare_exchange_n( ( P ), ( void * )( O ), ( N ), 0, __ATOMIC_SEQ_CST, __ATOMIC_SEQ_CST )
 
 #elif !defined(HB_NO_MT) && (defined(_WIN32) || defined(__CYGWIN__))
 
